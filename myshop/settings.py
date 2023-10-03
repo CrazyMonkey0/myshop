@@ -144,4 +144,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # Key to store shopping cart in user session
 CART_SESSION_ID = 'cart'
 
+# Email backend server
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Settings for connect to rabbitmq
+CELERY_BROKER_URL = 'amqp://admin:mypass@rabbitmq:5672//'

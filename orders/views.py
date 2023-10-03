@@ -17,7 +17,7 @@ def order_create(request):
             # Deleting the contents of the shopping cart
             cart.clear()
             # Running an asynchronous task
-            order_created(order.id)
+            order_created.delay(order.id)
             return render(request, 'orders/order/created.html', {'order': order})
     else:
         form = OrderCreateForm()

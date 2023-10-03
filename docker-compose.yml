@@ -7,15 +7,32 @@ services:
       - POSTGRES_DB=shop
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-  rabbit:
-    hostname: rabbit
-    image: rabbitmq:3.6.9
+
+  rabbitmq:
+    image: rabbitmq:3.8
     environment:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=mypass
+
     ports:
       - "5672:5672"
       - "15672:15672"
+
+  celery:
+    build: .
+    image: celery:latest
+    environment:
+      - POSTGRES_NAME=shop
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    command: celery -A myshop worker -l info
+    volumes:
+      - .:/code
+    depends_on:
+      - web
+      - rabbitmq
+      - db
+
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
@@ -30,3 +47,16 @@ services:
     entrypoint: /entrypoint.sh
     depends_on:
       - db
+      - rabbitmq
+
+  flower:
+    build: .
+    image: mher/flower:2.0.1
+    command: celery --app myshop flower --broker=amqp://admin:mypass@rabbitmq:5672//
+    volumes:
+      - .:/code
+    ports:
+      - "5555:5555"
+    depends_on:
+      - rabbitmq
+      - celery
