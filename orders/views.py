@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.shortcuts import render, get_object_or_404
 from django.contrib.admin.views.decorators import staff_member_required
+from coupons.models import Coupon
 from .models import OrderItem, Order
 from .forms import OrderCreateForm
 from .tasks import order_created
@@ -12,10 +13,18 @@ import weasyprint
 
 def order_create(request):
     cart = Cart(request)
+    coupon = Coupon.objects.get(id=cart.coupon_id)
     if request.method == 'POST':
         form = OrderCreateForm(request.POST)
         if form.is_valid():
-            order = form.save()
+            order = form.save(commit=False)
+            if cart.coupon:
+                # Deactivation of coupon
+                coupon.active = False
+                coupon.save()
+                order.coupon = cart.coupon
+                order.discount = cart.coupon.discount
+            order.save()
             for item in cart:
                 OrderItem.objects.create(order=order, product=item['product'],
                                          price=item['price'], quantity=item['quantity'])
