@@ -8,17 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-06 15:53+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2023-10-06 16:25+0200\n"
+"PO-Revision-Date: 2023-10-06 14:33+0000\n"
+"Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
-"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
-"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.9\n"
 
 #: cart/forms.py:12 cart/templates/cart/detail.html:16
 msgid "Quantity"
@@ -60,7 +59,7 @@ msgid ""
 "            "
 msgstr ""
 "\n"
-"            <td>\"%(code)s\" kupon (%(discount)s%% zniżki)</td>\n"
+"<td>\"%(code)s\" kupon (%(discount)s%% zniżki)</td>\n"
 "            "
 
 #: cart/templates/cart/detail.html:69
@@ -69,29 +68,29 @@ msgstr "Lącznie"
 
 #: cart/templates/cart/detail.html:78
 msgid "Apply a coupon"
-msgstr ""
+msgstr "Zapisz kupon"
 
 #: cart/templates/cart/detail.html:86
 msgid "Continue shopping"
-msgstr ""
+msgstr "Kontynuuj zakupy"
 
 #: cart/templates/cart/detail.html:88
 #: orders/templates/orders/order/create.html:4
 #: orders/templates/orders/order/create.html:7
 msgid "Checkout"
-msgstr ""
+msgstr "Kasa"
 
 #: coupons/forms.py:6
 msgid "Coupon"
 msgstr "Kupon"
 
-#: myshop/settings.py:128
-msgid "Polish"
-msgstr ""
-
 #: myshop/settings.py:129
+msgid "Polish"
+msgstr "Polski"
+
+#: myshop/settings.py:130
 msgid "English"
-msgstr ""
+msgstr "Angielski"
 
 #: orders/models.py:18
 msgid "first name"
@@ -119,7 +118,7 @@ msgstr "Miejscowość"
 
 #: orders/templates/orders/order/create.html:9
 msgid "Order"
-msgstr ""
+msgstr "Zamówienie"
 
 #: orders/templates/orders/order/create.html:19
 #, python-format
@@ -128,61 +127,74 @@ msgid ""
 "            \"%(code)s\" (%(discount)s%% discount)\n"
 "            "
 msgstr ""
+"\n"
+"\"%(code)s\" (%(discount)s%% rabat)"
 
 #: orders/templates/orders/order/create.html:29
 msgid "Place order "
-msgstr ""
+msgstr "Złóż zamówienie"
 
 #: orders/templates/orders/order/created.html:5
 #: orders/templates/orders/order/created.html:9
 msgid "Thank you"
-msgstr ""
+msgstr "Dziękuje "
 
 #: orders/templates/orders/order/created.html:10
 #, python-format
 msgid ""
 "\n"
-"<p>Your order has been successfully completed. Your order number is "
-"<strong>%(order_id)s</strong>.</p>\n"
+"<p>Your order has been successfully completed. Your order number is <strong>%(order_id)s</strong>.</p>\n"
 msgstr ""
+"\n"
+"<p>Twoje zamówienie zostało pomyślnie zrealizowane. Numer zamówienia to<strong>%(order_id)s</strong>.</p>\n"
 
 #: shop/templates/shop/base.html:8 shop/templates/shop/base.html:14
 msgid "My shop"
-msgstr ""
+msgstr "Mój sklep"
 
 #: shop/templates/shop/base.html:20
 msgid "Cart"
-msgstr ""
+msgstr "Koszyk"
 
 #: shop/templates/shop/base.html:22
 #, python-format
 msgid ""
 "\n"
-"                    %(total_items)s item%(total_items_plural)s,"
-"%(total_price)s zł\n"
+"                    %(items)s item, %(total)szł\n"
 "                    "
-msgstr ""
+msgid_plural ""
+"\n"
+"                    %(items)s items, %(total)szł\n"
+"                    "
+msgstr[0] ""
+"\n"
+"%(items)s przedmiot, %(total)s zł"
+msgstr[1] ""
+"\n"
+"%(items)s przedmioty, %(total)s zł"
+msgstr[2] ""
+msgstr[3] ""
 
-#: shop/templates/shop/base.html:27
+#: shop/templates/shop/base.html:29
 msgid "Cart is empty"
-msgstr ""
+msgstr "Koszyk jest pusty"
 
 #: shop/templates/shop/product/detail.html:18
 msgid "Add to cart"
-msgstr ""
+msgstr "Dodaj do koszyka"
 
 #: shop/templates/shop/product/list.html:6
 #: shop/templates/shop/product/list.html:24
 msgid "Products"
-msgstr ""
+msgstr "Produkty"
 
 #: shop/templates/shop/product/list.html:11
 msgid "Categories"
-msgstr ""
+msgstr "Kategorie"
 
 #: shop/templates/shop/product/list.html:14
 msgid "All"
-msgstr ""
+msgstr "Wszystko"
 
 #~ msgid "polski"
 #~ msgstr "Polish"

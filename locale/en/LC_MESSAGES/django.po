@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-06 15:53+0200\n"
+"POT-Creation-Date: 2023-10-06 16:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,11 +80,11 @@ msgstr ""
 msgid "Coupon"
 msgstr ""
 
-#: myshop/settings.py:128
+#: myshop/settings.py:129
 msgid "Polish"
 msgstr ""
 
-#: myshop/settings.py:129
+#: myshop/settings.py:130
 msgid "English"
 msgstr ""
 
@@ -153,12 +153,16 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"                    %(total_items)s item%(total_items_plural)s,"
-"%(total_price)s zł\n"
+"                    %(items)s item, %(total)szł\n"
 "                    "
-msgstr ""
+msgid_plural ""
+"\n"
+"                    %(items)s items, %(total)szł\n"
+"                    "
+msgstr[0] ""
+msgstr[1] ""
 
-#: shop/templates/shop/base.html:27
+#: shop/templates/shop/base.html:29
 msgid "Cart is empty"
 msgstr ""
 
