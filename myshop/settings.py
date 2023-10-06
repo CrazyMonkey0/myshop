@@ -125,8 +125,8 @@ LANGUAGE_CODE = 'en-us'
 
 # Defining available languages for our application
 LANGUAGES = (
-    ('pl', _('polski')),
-    ('en', _('angielski')),
+    ('pl', _('Polish')),
+    ('en', _('English')),
 )
 
 # Setting space for message file type
