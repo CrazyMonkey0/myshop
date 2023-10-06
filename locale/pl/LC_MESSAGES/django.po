@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-06 16:25+0200\n"
-"PO-Revision-Date: 2023-10-06 14:33+0000\n"
+"POT-Creation-Date: 2023-10-06 17:00+0200\n"
+"PO-Revision-Date: 2023-10-06 15:07+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -80,9 +80,21 @@ msgstr "Kontynuuj zakupy"
 msgid "Checkout"
 msgstr "Kasa"
 
+#: cart/urls.py:9
+msgid "add/<int:product_id>/"
+msgstr "dodaj/<int:product_id>/"
+
+#: cart/urls.py:10
+msgid "remove/<int:product_id>/"
+msgstr "usun/<int:product_id>/"
+
 #: coupons/forms.py:6
 msgid "Coupon"
 msgstr "Kupon"
+
+#: coupons/urls.py:8
+msgid "apply/"
+msgstr "zatwierdz/"
 
 #: myshop/settings.py:129
 msgid "Polish"
@@ -91,6 +103,25 @@ msgstr "Polski"
 #: myshop/settings.py:130
 msgid "English"
 msgstr "Angielski"
+
+#: myshop/urls.py:12
+msgid "admin/"
+msgstr "admin/"
+
+#: myshop/urls.py:13
+#| msgid "Order"
+msgid "orders/"
+msgstr "zamowienie/"
+
+#: myshop/urls.py:14
+msgid "cart/"
+msgstr "koszyk/"
+
+#: myshop/urls.py:15
+#, fuzzy
+#| msgid "Coupon"
+msgid "coupons/"
+msgstr "Kupon"
 
 #: orders/models.py:18
 msgid "first name"
@@ -147,6 +178,18 @@ msgid ""
 msgstr ""
 "\n"
 "<p>Twoje zamówienie zostało pomyślnie zrealizowane. Numer zamówienia to<strong>%(order_id)s</strong>.</p>\n"
+
+#: orders/urls.py:8
+msgid "create/"
+msgstr "stworz/"
+
+#: orders/urls.py:9
+msgid "admin/order/<int:order_id>/"
+msgstr "admin/zamowienie/<int:order_id>/"
+
+#: orders/urls.py:11
+msgid "admin/order/<int:order_id>/pdf/"
+msgstr "admin/zamowienie/<int:order_id>/pdf/"
 
 #: shop/templates/shop/base.html:8 shop/templates/shop/base.html:14
 msgid "My shop"
