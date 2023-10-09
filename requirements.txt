@@ -12,6 +12,7 @@ click-plugins==1.1.1
 click-repl==0.3.0
 cssselect2==0.7.0
 Django==4.2.5
+django-localflavor==4.0
 django-rosetta==0.9.9
 flower==2.0.1
 fonttools==4.43.0
@@ -28,6 +29,7 @@ pycparser==2.21
 pydyf==0.8.0
 pyphen==0.14.0
 python-dateutil==2.8.2
+python-stdnum==1.19
 pytz==2023.3.post1
 requests==2.31.0
 six==1.16.0
