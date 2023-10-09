@@ -13,15 +13,18 @@ import weasyprint
 
 def order_create(request):
     cart = Cart(request)
-    coupon = Coupon.objects.get(id=cart.coupon_id)
     if request.method == 'POST':
         form = OrderCreateForm(request.POST)
         if form.is_valid():
             order = form.save(commit=False)
             if cart.coupon:
                 # Deactivation of coupon
-                coupon.active = False
-                coupon.save()
+                try:
+                    coupon = Coupon.objects.get(id=cart.coupon_id)
+                    coupon.active = False
+                    coupon.save()
+                except Coupon.DoesNotExist:
+                    coupon = None
                 order.coupon = cart.coupon
                 order.discount = cart.coupon.discount
             order.save()

@@ -1,19 +1,22 @@
 {% extends "shop/base.html" %}
 {% load static %}
+{% load i18n %}
+
 {% block title %}
-Shopping cart
+{% trans "Your shopping cart" %}
 {% endblock %}
+
 {% block content %}
-<h1>Shopping cart</h1>
+<h1>{% trans "Your shopping cart" %}</h1>
 <table class="cart">
     <thead>
         <tr>
-            <th>Image</th>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Remove</th>
-            <th>Per unit price</th>
-            <th>Amount</th>
+            <th>{% trans "Image" %}</th>
+            <th>{% trans "Product" %}</th>
+            <th>{% trans "Quantity" %}</th>
+            <th>{% trans "Remove" %}</th>
+            <th>{% trans "Unit price" %}</th>
+            <th>{% trans "Price" %}</th>
         </tr>
     </thead>
     <tbody>
@@ -22,59 +25,67 @@ Shopping cart
         <tr>
             <td>
                 <a href="{{ product.get_absolute_url }}">
-                    <img
-                        src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                    <img src="{% if product.image %}{{ product.image.url }}
+                {% else %}{% static "img/no_image.png" %}{% endif %}">
                 </a>
             </td>
             <td>{{ product.name }}</td>
             <td>
                 <form action="{% url "cart:cart_add" product.id %}" method="post">
                     {{ item.update_quantity_form.quantity }}
-                    {{ item.update_quantity_form.update }}
-                    <input type="submit" value="Change">
+                    {{ item.update_quantity_form.override }}
+                    <input type="submit" value="Update">
                     {% csrf_token %}
                 </form>
             </td>
             <td>
                 <form action="{% url "cart:cart_remove" product.id %}" method="post">
-                    <input type="submit" value="Remove">
+                    <input type="submit" value="{% trans "Remove" %}">
                     {% csrf_token %}
                 </form>
             </td>
-            <td class="num">{{ item.price }} zł</td>
-            <td class="num">{{ item.total_price }} zł</td>
+            <td class="num">{{ item.price }}zł</td>
+            <td class="num">{{ item.total_price }}zł</td>
         </tr>
         {% endwith %}
         {% endfor %}
         {% if cart.coupon %}
         <tr class="subtotal">
-            <td>Total value</td>
+            <td>{% trans "Subtotal" %}</td>
             <td colspan="4"></td>
-            <td class="num">{{ cart.get_total_price }} zł</td>
+            <td class="num">{{ cart.get_total_price|floatformat:2 }} zł</td>
         </tr>
         <tr>
-            <td>
-                Coupon "{{ cart.coupon.code }}"
-                ({{ cart.coupon.discount }}% discount)
-            </td>
+            {% blocktrans with code=cart.coupon.code discount=cart.coupon.discount %}
+            <td>"{{ code }}" coupon ({{ discount }}% off)</td>
+            {% endblocktrans %}
             <td colspan="4"></td>
             <td class="num neg">
-                - {{ cart.get_discount|floatformat:"2" }} zł
+                - {{ cart.get_discount|floatformat:2 }}zł
             </td>
         </tr>
         {% endif %}
+        <tr class="total">
+            <td>{% trans "Total" %}</td>
+            <td colspan="4"></td>
+            <td class="num">
+                {{ cart.get_total_price_after_discount|floatformat:2 }}zł
+            </td>
+        </tr>
     </tbody>
 </table>
-<p>Discount Coupon:</p>
+
+<p>{% trans "Apply a coupon" %}:</p>
 <form action="{% url "coupons:apply" %}" method="post">
     {{ coupon_apply_form }}
-    <input type="submit" value="Enter">
+    <input type="submit" value="Apply">
     {% csrf_token %}
 </form>
+
 <p class="text-right">
-    <a href="{% url "shop:product_list" %}" class="buttonlight">Continue shopping</a>
+    <a href="{% url "shop:product_list" %}" class="button light">{% trans "Continue shopping" %}</a>
     <a href="{% url "orders:order_create" %}" class="button">
-        Buy
+        {% trans "Checkout" %}
     </a>
 </p>
 {% endblock %}
