@@ -13,10 +13,19 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=admin
       - RABBITMQ_DEFAULT_PASS=mypass
-
     ports:
       - "5672:5672"
       - "15672:15672"
+
+  redis:
+    hostname: redis
+    image: redis:latest
+    command:
+      - --include /usr/local/etc/redis/redis.conf
+    volumes:
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - "6379:6379"
 
   celery:
     build: .
@@ -32,6 +41,7 @@ services:
       - web
       - rabbitmq
       - db
+      - redis
 
   web:
     build: .
@@ -48,6 +58,7 @@ services:
     depends_on:
       - db
       - rabbitmq
+      - redis
 
   flower:
     build: .
@@ -60,3 +71,4 @@ services:
     depends_on:
       - rabbitmq
       - celery
+      - redis

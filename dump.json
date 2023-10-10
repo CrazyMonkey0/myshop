@@ -496,6 +496,114 @@
         }
     },
     {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add order",
+            "content_type": 9,
+            "codename": "add_order"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change order",
+            "content_type": 9,
+            "codename": "change_order"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete order",
+            "content_type": 9,
+            "codename": "delete_order"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view order",
+            "content_type": 9,
+            "codename": "view_order"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 37,
+        "fields": {
+            "name": "Can add order item",
+            "content_type": 10,
+            "codename": "add_orderitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 38,
+        "fields": {
+            "name": "Can change order item",
+            "content_type": 10,
+            "codename": "change_orderitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 39,
+        "fields": {
+            "name": "Can delete order item",
+            "content_type": 10,
+            "codename": "delete_orderitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 40,
+        "fields": {
+            "name": "Can view order item",
+            "content_type": 10,
+            "codename": "view_orderitem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 41,
+        "fields": {
+            "name": "Can add coupon",
+            "content_type": 11,
+            "codename": "add_coupon"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 42,
+        "fields": {
+            "name": "Can change coupon",
+            "content_type": 11,
+            "codename": "change_coupon"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 43,
+        "fields": {
+            "name": "Can delete coupon",
+            "content_type": 11,
+            "codename": "delete_coupon"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 44,
+        "fields": {
+            "name": "Can view coupon",
+            "content_type": 11,
+            "codename": "view_coupon"
+        }
+    },
+    {
         "model": "auth.user",
         "pk": 1,
         "fields": {
@@ -578,11 +686,43 @@
         }
     },
     {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "orders",
+            "model": "order"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 10,
+        "fields": {
+            "app_label": "orders",
+            "model": "orderitem"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 11,
+        "fields": {
+            "app_label": "coupons",
+            "model": "coupon"
+        }
+    },
+    {
         "model": "sessions.session",
         "pk": "sembplblzbxw8hefp8wbgamnc717a9gc",
         "fields": {
             "session_data": ".eJxVjDsOwjAQBe_iGlmxdx07lPQ5Q7Rer3EAOVI-FeLuJFIKaGfmvbcaaFvLsC0yD2NSV2XU5ZdF4qfUQ6QH1fukearrPEZ9JPq0i-6nJK_b2f4dFFrKvoZWGuOhIQicPRCamEJg6MRlSNEIolgL2bK0O2MrIWfCjhEcovPq8wXf5jfb:1qlTRV:bdl2hbQJGl0TNlkz6kN77rR0MtgIQQITJ6esn2SS2b8",
             "expire_date": "2023-10-11T12:15:01.612Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "ywrnpl2pg0b9wfdrcdgryz676rq2k9ig",
+        "fields": {
+            "session_data": "eyJjYXJ0Ijp7fX0:1qq9cG:kNQSZYQlVmnVWhWha7G4Bpeu-rlHXbPlXNZ0lNHwZy8",
+            "expire_date": "2023-10-24T10:05:28.225Z"
         }
     },
     {
@@ -743,6 +883,325 @@
             "available": true,
             "created": "2023-09-28T10:24:28.003Z",
             "updated": "2023-09-28T10:24:28.003Z"
+        }
+    },
+    {
+        "model": "orders.order",
+        "pk": 1,
+        "fields": {
+            "coupon": null,
+            "discount": 0,
+            "first_name": "fguhy",
+            "last_name": "hvjg",
+            "email": "12w@dsa.sa",
+            "address": "yugh",
+            "postal_code": "21-301",
+            "city": "hbki",
+            "created": "2023-10-10T09:06:24.150Z",
+            "updated": "2023-10-10T09:06:24.150Z",
+            "paid": false
+        }
+    },
+    {
+        "model": "orders.order",
+        "pk": 2,
+        "fields": {
+            "coupon": null,
+            "discount": 0,
+            "first_name": "dweas",
+            "last_name": "dsdsf",
+            "email": "f2sda@sda.ws",
+            "address": "dvcx",
+            "postal_code": "21-301",
+            "city": "aaa",
+            "created": "2023-10-10T09:09:44.081Z",
+            "updated": "2023-10-10T09:09:44.081Z",
+            "paid": false
+        }
+    },
+    {
+        "model": "orders.order",
+        "pk": 3,
+        "fields": {
+            "coupon": null,
+            "discount": 0,
+            "first_name": "eSDF",
+            "last_name": "FSD",
+            "email": "DFS2FDS@aa.ddsf",
+            "address": "ads",
+            "postal_code": "21-301",
+            "city": "adsa",
+            "created": "2023-10-10T09:51:08.187Z",
+            "updated": "2023-10-10T09:51:08.187Z",
+            "paid": false
+        }
+    },
+    {
+        "model": "orders.order",
+        "pk": 4,
+        "fields": {
+            "coupon": null,
+            "discount": 0,
+            "first_name": "gf",
+            "last_name": "fdg",
+            "email": "gdf@saa.ads",
+            "address": "dasa",
+            "postal_code": "23-134",
+            "city": "das",
+            "created": "2023-10-10T09:56:45.939Z",
+            "updated": "2023-10-10T09:56:45.939Z",
+            "paid": false
+        }
+    },
+    {
+        "model": "orders.order",
+        "pk": 5,
+        "fields": {
+            "coupon": null,
+            "discount": 0,
+            "first_name": "fggdf",
+            "last_name": "gdfdf",
+            "email": "f2sda@sda.ws",
+            "address": "asd",
+            "postal_code": "21-301",
+            "city": "aaa",
+            "created": "2023-10-10T10:03:49.819Z",
+            "updated": "2023-10-10T10:03:49.819Z",
+            "paid": false
+        }
+    },
+    {
+        "model": "orders.order",
+        "pk": 6,
+        "fields": {
+            "coupon": null,
+            "discount": 0,
+            "first_name": "vcxvxc",
+            "last_name": "xcvxvc",
+            "email": "12w@dsa.sa",
+            "address": "vxc",
+            "postal_code": "21-301",
+            "city": "vcxxcv",
+            "created": "2023-10-10T10:04:35.597Z",
+            "updated": "2023-10-10T10:04:35.597Z",
+            "paid": false
+        }
+    },
+    {
+        "model": "orders.order",
+        "pk": 7,
+        "fields": {
+            "coupon": null,
+            "discount": 0,
+            "first_name": "dfs",
+            "last_name": "fdsfsd",
+            "email": "f2sda@sda.ws",
+            "address": "sfds",
+            "postal_code": "21-301",
+            "city": "asdas",
+            "created": "2023-10-10T10:05:25.750Z",
+            "updated": "2023-10-10T10:05:25.750Z",
+            "paid": false
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 1,
+        "fields": {
+            "order": 1,
+            "product": 2,
+            "price": "10000.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 2,
+        "fields": {
+            "order": 1,
+            "product": 1,
+            "price": "1000.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 3,
+        "fields": {
+            "order": 2,
+            "product": 2,
+            "price": "10000.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 4,
+        "fields": {
+            "order": 2,
+            "product": 4,
+            "price": "32132.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 5,
+        "fields": {
+            "order": 2,
+            "product": 1,
+            "price": "1000.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 6,
+        "fields": {
+            "order": 3,
+            "product": 2,
+            "price": "10000.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 7,
+        "fields": {
+            "order": 3,
+            "product": 8,
+            "price": "345.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 8,
+        "fields": {
+            "order": 3,
+            "product": 1,
+            "price": "1000.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 9,
+        "fields": {
+            "order": 4,
+            "product": 1,
+            "price": "1000.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 10,
+        "fields": {
+            "order": 4,
+            "product": 6,
+            "price": "321.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 11,
+        "fields": {
+            "order": 4,
+            "product": 3,
+            "price": "21312.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 12,
+        "fields": {
+            "order": 5,
+            "product": 1,
+            "price": "1000.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 13,
+        "fields": {
+            "order": 5,
+            "product": 2,
+            "price": "10000.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 14,
+        "fields": {
+            "order": 6,
+            "product": 2,
+            "price": "10000.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 15,
+        "fields": {
+            "order": 6,
+            "product": 8,
+            "price": "345.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 16,
+        "fields": {
+            "order": 6,
+            "product": 6,
+            "price": "321.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 17,
+        "fields": {
+            "order": 6,
+            "product": 7,
+            "price": "112.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 18,
+        "fields": {
+            "order": 6,
+            "product": 4,
+            "price": "32132.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 19,
+        "fields": {
+            "order": 7,
+            "product": 2,
+            "price": "10000.00",
+            "quantity": 1
+        }
+    },
+    {
+        "model": "orders.orderitem",
+        "pk": 20,
+        "fields": {
+            "order": 7,
+            "product": 1,
+            "price": "1000.00",
+            "quantity": 1
         }
     }
 ]
